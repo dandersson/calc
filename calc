@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ ${#} = 0 ]; then
+	python -ic "from __future__ import division; from math import *;"
+else
+	python -c "from __future__ import division; from math import *; print ${*};"
+fi
