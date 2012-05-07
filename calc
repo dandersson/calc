@@ -4,6 +4,8 @@ ARGS=$(
 	cat -- <<-ARGS
 		from __future__ import division;\
 		from math import *;\
+		c=299792458;\
+		g=9.82
 		ARGS
 	)
 
