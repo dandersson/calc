@@ -1,6 +1,14 @@
 #!/bin/sh
-if [ ${#} = 0 ]; then
-	python -ic "from __future__ import division; from math import *;"
+
+ARGS=$(
+	cat -- <<-ARGS
+		from __future__ import division;\
+		from math import *;\
+		ARGS
+	)
+
+if [ ${#} -eq 0 ]; then
+	python -ic "${ARGS}"
 else
-	python -c "from __future__ import division; from math import *; print ${*};"
+	python -c "${ARGS}; print ${*};"
 fi
