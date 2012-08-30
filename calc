@@ -15,6 +15,9 @@ ARGS=$(cat -- <<-ARGS
 	c=299792458
 	g=9.82
 	
+	# Alias log() (the natural logarithm) to ln()
+	ln=log
+	
 	ARGS
 )
 
