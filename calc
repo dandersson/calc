@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#Possible addition:
+#	from numpy.linalg import norm;\
+#but it adds a second or two to initial startup time and is not that frequently needed.
+
 ARGS=$(cat -- <<-ARGS
 	# Use floating point division by default
 	from __future__ import division
