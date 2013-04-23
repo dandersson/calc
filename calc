@@ -1,34 +1,32 @@
 #!/bin/sh
 
-#Possible addition:
-#	from numpy.linalg import norm
-#but it adds a second or two to initial startup time and is not that frequently needed.
+# Possible addition:
+#     from numpy.linalg import norm
+# but it adds a second or two to initial startup time and is not that
+# frequently needed.
 
-ARGS=$(cat -- <<-ARGS
-	# Use floating point division by default.
-	from __future__ import division
-	
-	# Import common math functions into default namespace.
-	from math import *
+ARGS='
+# Use floating point division by default.
+from __future__ import division
 
-	# Enable tab completion of variables and functions.
-	import readline
-	import rlcompleter
+# Import common math functions into default namespace.
+from math import *
 
-	readline.parse_and_bind("tab: complete")
+# Enable tab completion of variables and functions.
+import readline
+import rlcompleter
 
-	# Define some common constants.
-	c  = 299792458		# Speed of light in a vacuum	[m/s]
-	g  = 9.82		# Gravitational acceleration	[m/s²]
-	e0 = 8.854187817620e-12	# Vacuum permittivity, ε_0	[F/m]
-	m0 = pi*4e-7		# Vacuum permeability, μ_0	[Vs/Am]
-	Z0 = sqrt(m0/e0)	# Vacuum impedance, Z_0		[Ω]
-	
-	# Alias log() (the natural logarithm) to ln().
-	ln = log
-	
-	ARGS
-)
+readline.parse_and_bind("tab: complete")
+
+# Define some common constants.
+c  = 299792458           # Speed of light in a vacuum  [m/s]
+g  = 9.82                # Gravitational acceleration  [m/s²]
+e0 = 8.854187817620e-12  # Vacuum permittivity, ε_0    [F/m]
+m0 = pi*4e-7             # Vacuum permeability, μ_0    [Vs/Am]
+Z0 = sqrt(m0/e0)         # Vacuum impedance, Z_0       [Ω]
+
+# Alias log() (the natural logarithm) to ln().
+ln = log' # Do not end with a newline.
 
 if [ ${#} -eq 0 ]; then
 	python -ic "${ARGS}"
