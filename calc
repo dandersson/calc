@@ -18,11 +18,6 @@ if [ "${1}" = "-h" ]; then
 	usage
 fi
 
-# Possible addition:
-#     from numpy.linalg import norm
-# but it adds a second or two to initial startup time and is not that
-# frequently needed.
-
 ARGS='
 # Use floating point division by default.
 from __future__ import division
@@ -50,6 +45,11 @@ ln = log
 def frac(num, limit=10**6):
     from fractions import Fraction
     return Fraction(num).limit_denominator(limit)
+
+# Quick 2-norm function for vectors.
+def norm(*args):
+    import numpy.linalg as npl
+    return npl.norm(args)
 
 #' # Do not end with a newline.
 
