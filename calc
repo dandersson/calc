@@ -41,12 +41,13 @@ Z0 = sqrt(m0/e0)         # Vacuum impedance, Z_0       [Ω]
 # Alias log() (the natural logarithm) to ln().
 ln = log
 
-# Handy function for computing fractions.
+# Compute best fractional approximation.
 def frac(num, limit=10**6):
     from fractions import Fraction
     return Fraction(num).limit_denominator(limit)
 
-# Quick 2-norm function for vectors.
+# 2-norm function for vectors. Note that it handles both an adaptive number of
+# direct arguments and list/tuple input.
 def norm(*args):
     import numpy.linalg as npl
     return npl.norm(args)
