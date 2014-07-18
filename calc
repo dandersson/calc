@@ -40,6 +40,11 @@ g  = 9.82                # Gravitational acceleration  [m/s²]
 e0 = 8.854187817620e-12  # Vacuum permittivity, ε_0    [F/m]
 m0 = pi*4e-7             # Vacuum permeability, μ_0    [Vs/Am]
 Z0 = sqrt(m0/e0)         # Vacuum impedance, Z_0       [Ω]
+ke = 1/4/pi/e0           # Coulomb constant, k_e       [m/F]
+me = 9.10938291e-31      # Electron mass, m_e          [kg]
+mp = 1.672621777e-27     # Proton mass, m_p            [kg]
+ec = 1.602176565e-19     # Fundamental charge, e       [C]
+NA = 6.02214129e23       # Avogadro constant, N_A      [mol⁻¹]
 
 # Alias log() (the natural logarithm) to ln().
 ln = log
