@@ -44,7 +44,14 @@ m0 = pi*4e-7             # Vacuum permeability, μ_0    [Vs/Am]
 Z0 = sqrt(m0/e0)         # Vacuum impedance, Z_0       [Ω]
 
 # Alias log() (the natural logarithm) to ln().
-ln = log' # Do not end with a newline.
+ln = log
+
+# Handy function for computing fractions.
+def frac(num, limit=10**6):
+    from fractions import Fraction
+    return Fraction(num).limit_denominator(limit)
+
+#' # Do not end with a newline.
 
 if [ ${#} -eq 0 ]; then
 	python -ic "${ARGS}"
