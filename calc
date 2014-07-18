@@ -58,7 +58,7 @@ def norm(*args):
 pass' # Do not end with a newline.
 
 if [ ${#} -eq 0 ]; then
-	python -ic "${ARGS}"
+	python3 -ic "${ARGS}"
 else
-	python -c "${ARGS}; print ${*}"
+	python3 -c "${ARGS}; print($*)"
 fi
