@@ -21,6 +21,8 @@ while getopts "h" option; do
 done
 shift $((OPTIND-1))
 
+PYTHON="/usr/bin/env python3"
+
 ARGS='
 # Use floating point division by default.
 from __future__ import division
@@ -62,8 +64,8 @@ def norm(*args):
 
 pass' # Do not end with a newline.
 
-if [ ${#} -eq 0 ]; then
-	python3 -ic "${ARGS}"
+if [ $# -eq 0 ]; then
+	$PYTHON -ic "$ARGS"
 else
-	python3 -c "${ARGS}; print($*)"
+	$PYTHON -c "$ARGS; print($*)"
 fi
