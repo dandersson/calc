@@ -55,10 +55,10 @@ def norm(*args):
     import numpy.linalg as npl
     return npl.norm(args)
 
-#' # Do not end with a newline.
+pass' # Do not end with a newline.
 
 if [ ${#} -eq 0 ]; then
 	python -ic "${ARGS}"
 else
-	python -c "${ARGS}; print ${*};"
+	python -c "${ARGS}; print ${*}"
 fi
