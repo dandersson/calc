@@ -7,9 +7,9 @@ usage() {
 
 	optional arguments:
 	  EXPR  expression to be evaluated
-	  -h    this text
+	  -h    show this text
 
-	Without arguments the python interpreter is started.
+	Without arguments the Python interpreter is started.
 	USAGE
 	exit 1
 }
