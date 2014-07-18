@@ -51,6 +51,9 @@ NA = 6.02214129e23       # Avogadro constant, N_A         [mol⁻¹]
 # Alias log() (the natural logarithm) to ln().
 ln = log
 
+# Modules are loaded only upon function invocation below to keep general
+# startup time fast.
+
 # Compute best fractional approximation.
 def frac(num, limit=10**6):
     from fractions import Fraction
